@@ -114,47 +114,14 @@ const formatOthers = (...args) => {
 
 const formatTablesForAllRegisters = (data) => {
   let dataText = ``;
-  const keys = [];
-  Object.keys(data[0]).forEach(k => keys.push(k));
-  switch (keys.length) {
-    case 2:
-      data.forEach(d => {
-        dataText += `${keys[0]}:${d[keys[0]]}#${keys[1]}:${d[keys[1]]}\r\n`;
-      });
-      break;
-    case 3:
-      data.forEach(d => {
-        dataText += `${keys[0]}:${d[keys[0]]}#${keys[1]}:${d[keys[1]]}#${keys[2]}:${d[keys[2]]}\r\n`;
-      });
-      break;
-    case 4:
-      data.forEach(d => {
-        dataText += `
-        ${keys[0]}:${d[keys[0]]}#${keys[1]}:${d[keys[1]]}#${keys[2]}:${d[keys[2]]}#
-        ${keys[3]}:${d[keys[3]]}\r\n`;
-      });
-    break;
-    case 5:
-      data.forEach(d => {
-        dataText += `
-        ${keys[0]}:${d[keys[0]]}#${keys[1]}:${d[keys[1]]}#${keys[2]}:${d[keys[2]]}#
-        ${keys[3]}:${d[keys[3]]}#${keys[4]}:${d[keys[4]]}\r\n`;
-      });
-    break;
-    case 13:
-      data.forEach(d => {
-        dataText += `
-        ${keys[0]}:${d[keys[0]]}#${keys[1]}:${d[keys[1]]}#${keys[2]}:${d[keys[2]]}#
-        ${keys[3]}:${d[keys[3]]}#${keys[4]}:${d[keys[4]]}#${keys[5]}:${d[keys[5]]}#
-        ${keys[6]}:${d[keys[6]]}#${keys[7]}:${d[keys[7]]}#${keys[8]}:${d[keys[8]]}
-        ${keys[9]}:${d[keys[9]]}#${keys[10]}:${d[keys[10]]}#${keys[11]}:${d[keys[11]]}
-        ${keys[12]}:${d[keys[12]]}\r\n`;
-      });
-    break;
-    default:
-      break;
-  }
-  return dataText;
+  data.forEach(d => {
+    dataText += `{\r\n`;
+    Object.keys(d).forEach(key => {
+      dataText += `${key}:${d[key]}\r\n`;
+    });
+    dataText += `}\r\n`;
+  });
+   return dataText;
 };
 
 const formatTablesForOneRegisters = (data) => {

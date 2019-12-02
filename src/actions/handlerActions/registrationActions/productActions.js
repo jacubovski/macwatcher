@@ -5,7 +5,7 @@ const {
   deleteProduct,
   fetchProduct,
 } = require('./schemas/product');
-const { formatProduct } = require('.../responseFormat');
+const { formatProduct } = require('../responseFormat');
 const { writeFile } = require('../../writeFile');
 const { handlerError, appendLogs } = require('../../handlerErrors');
 

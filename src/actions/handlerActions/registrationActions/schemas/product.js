@@ -208,8 +208,8 @@ const deleteProduct = `
 }`;
 
 const fetchProduct = `
-query FetchProduct($company: Int! $code: Int) {
-  product(company: $company code: $code) {
+query FetchProduct($company: Int!, $code: Int) {
+  product(company: $company ,code: $code) {
     id
     prd_codigo
     prd_codigo_dv
