@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "cfop",
+  "action": "fetchCfop",
+  "variables": {
+    "code": 1101,
+    "company": 7
+  }
+}

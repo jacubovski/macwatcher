@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "unitMeas",
+  "action": "fetchUnitMeas",
+  "variables": {
+    "code": 1,
+    "company": 7
+  }
+}

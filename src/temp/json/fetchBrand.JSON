@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "brand",
+  "action": "fetchBrand",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

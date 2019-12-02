@@ -1,0 +1,8 @@
+{
+  "module": "table",
+  "target": "unitMeas",
+  "action": "allUnitMeass",
+  "variables": {
+    "company": 7
+  }
+}

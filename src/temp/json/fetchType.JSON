@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "type",
+  "action": "fetchType",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

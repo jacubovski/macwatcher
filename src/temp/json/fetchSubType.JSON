@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "subType",
+  "action": "fetchSubType",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

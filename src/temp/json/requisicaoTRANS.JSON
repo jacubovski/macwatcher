@@ -1,0 +1,9 @@
+{
+  "module": "registration",
+  "target": "shippingCompany",
+  "action": "fetchShippingCompany",
+  "variables": {
+    "code": 3,
+    "company": 7
+  }
+}

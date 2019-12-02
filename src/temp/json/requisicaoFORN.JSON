@@ -1,0 +1,9 @@
+{
+  "module": "registration",
+  "target": "provider",
+  "action": "fetchProvider",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "historic",
+  "action": "fetchHistoric",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

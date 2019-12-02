@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "customerType",
+  "action": "fetchCustomerType",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

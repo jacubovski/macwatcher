@@ -1,0 +1,9 @@
+{
+  "module": "financial",
+  "target": "paymentTerm",
+  "action": "fetchPaymentTerm",
+  "variables": {
+    "code": 42,
+    "company": 7
+  }
+}

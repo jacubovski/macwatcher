@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "line",
+  "action": "fetchLine",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

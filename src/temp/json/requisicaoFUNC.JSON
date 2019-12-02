@@ -1,0 +1,9 @@
+{
+  "module": "registration",
+  "target": "employee",
+  "action": "fetchEmployee",
+  "variables": {
+    "code": 1,
+    "company": 7
+  }
+}

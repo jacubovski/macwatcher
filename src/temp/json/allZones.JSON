@@ -1,0 +1,8 @@
+{
+  "module": "table",
+  "target": "zone",
+  "action": "allZones",
+  "variables": {
+    "company": 7
+  }
+}

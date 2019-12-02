@@ -1,0 +1,8 @@
+{
+  "module": "financial",
+  "target": "paymentForm",
+  "action": "allPaymentForms",
+  "variables": {
+    "company": 7
+  }
+}

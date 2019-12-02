@@ -1,0 +1,9 @@
+{
+  "module": "registration",
+  "target": "salesman",
+  "action": "fetchSalesman",
+  "variables": {
+    "code": 1,
+    "company": 7
+  }
+}

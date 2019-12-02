@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "typePrice",
+  "action": "fetchTypePrice",
+  "variables": {
+    "code": 2,
+    "company": 7
+  }
+}

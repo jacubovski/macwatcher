@@ -1,0 +1,9 @@
+{
+  "module": "financial",
+  "target": "paymentForm",
+  "action": "fetchPaymentForm",
+  "variables": {
+    "code": 1,
+    "company": 7
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "module": "financial",
+  "target": "paymentTerm",
+  "action": "allPaymentTerms",
+  "variables": {
+    "company": 7
+  }
+}

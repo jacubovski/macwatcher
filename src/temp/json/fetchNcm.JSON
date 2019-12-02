@@ -1,0 +1,9 @@
+{
+  "module": "table",
+  "target": "ncm",
+  "action": "fetchNcm",
+  "variables": {
+    "code": 1,
+    "company": 7
+  }
+}
