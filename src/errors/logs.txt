@@ -1,39 +1,31 @@
-asd{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
-{
-  "code": "MODULE_NOT_FOUND"
-}
 {}
 {}
 {}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "copyfile",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/allBrands.JSON",
+  "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands-1576680451414.JSON"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "copyfile",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/allBrands copy.JSON",
+  "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands copy-1576680579093.JSON"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "copyfile",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/allBrands copy 2.JSON",
+  "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands copy 2-1576680615657.JSON"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "copyfile",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/allBrands.JSON",
+  "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands-1576680705253.JSON"
+}

@@ -83,6 +83,7 @@ const allCfops = async (variables, action) => {
     return { code: 500, status: 'error' };
   }
 };
+
 const createCfop = async (variables) => {
   try {
     const response = await axiosAuth.post('/macweb',{

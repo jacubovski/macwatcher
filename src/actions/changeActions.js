@@ -14,7 +14,7 @@ const addFiles = (token, pth) => {
         const ext = path.extname(nameFile);
         const name = path.basename(nameFile, ext);
         const fileNewName = `${name}-${Date.now()}${ext}`;
-        const copyFile =  path.resolve(__dirname, '..', 'enviar', nameFile);
+        const copyFile =  path.resolve(__dirname, '..', 'enviar', 'api', nameFile);
         const pasteFile =  path.resolve(__dirname, '..','enviados', fileNewName);
         fs.copyFile(copyFile, pasteFile, (err) => {
           if (err) appendLogs(err);
@@ -25,7 +25,7 @@ const addFiles = (token, pth) => {
         appendLogs(error);
       }
     }else if (code === 500) {
-      const copyFile =  path.resolve(__dirname, '..','enviar', nameFile);
+      const copyFile =  path.resolve(__dirname, '..','enviar', 'api', nameFile);
       fs.unlinkSync(copyFile);
     }
   });

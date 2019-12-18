@@ -1,0 +1,8 @@
+{
+  "module": "registration",
+  "target": "store",
+  "action": "fetchAllStore",
+  "variables": {
+    "company": 7
+  }
+}

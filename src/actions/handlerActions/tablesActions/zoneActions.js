@@ -30,9 +30,9 @@ const handlerZone = async (...args) => {
     case 'bulkZoneCreate':
       const bulkZone = await bulkCreateZone(variables);
       return bulkZone;
-      case 'fetchZone':
-    const fetchZone = await fthZone(variables, action);
-    return fetchZone;
+    case 'fetchZone':
+      const fetchZone = await fthZone(variables, action);
+      return fetchZone;
     case 'allZones':
       const allZone = await allZones(variables, action);
       return allZone;

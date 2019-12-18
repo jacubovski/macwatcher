@@ -150,10 +150,10 @@ const formatPaymentTerms = (data) => {
   Object.keys(data).forEach(key => {
     if (key === 'plots') {
       data[key].forEach((p, i) => {
-        dataText += `parcela-${i + 1}: {\r\n`;
-        dataText += ` ppp_parcela: ${p.ppp_parcela}\r\n`;
-        dataText += ` ppp_parcela: ${p.ppp_dias}\r\n`;
-        dataText += ` ppp_parcela: ${p.ppp_receb_dia}\r\n`;
+        dataText += `parcela-${i + 1}:{\r\n`;
+        dataText += ` ppp_parcela:${p.ppp_parcela}\r\n`;
+        dataText += ` ppp_dias:${p.ppp_dias}\r\n`;
+        dataText += ` ppp_receb_dia:${p.ppp_receb_dia}\r\n`;
         dataText += `}\r\n`;
       });
     } else {
@@ -171,10 +171,10 @@ const formatAllPaymentTerms = (...args) => {
     Object.keys(d).forEach(key => {
       if (key === 'plots') {
         d[key].forEach((p, i) => {
-          dataText += `parcela-${i + 1}: {\r\n`;
-          dataText += ` ppp_parcela: ${p.ppp_parcela}\r\n`;
-          dataText += ` ppp_parcela: ${p.ppp_dias}\r\n`;
-          dataText += ` ppp_parcela: ${p.ppp_receb_dia}\r\n`;
+          dataText += `parcela-${i + 1}:{\r\n`;
+          dataText += ` ppp_parcela:${p.ppp_parcela}\r\n`;
+          dataText += ` ppp_dias:${p.ppp_dias}\r\n`;
+          dataText += ` ppp_receb_dia:${p.ppp_receb_dia}\r\n`;
           dataText += `}\r\n`;
         });
       }else {
@@ -182,6 +182,28 @@ const formatAllPaymentTerms = (...args) => {
       }
     });
     dataText += `}\r\n`;
+  });
+  return dataText;
+};
+
+const formaAllStores = (payload) => {
+  let dataText = '';
+  payload.forEach(lj => {
+      dataText += '{\r\n';
+      Object.keys(lj).forEach(k => {
+        if (!k.match('_endereco')) {
+          dataText += `${k}:${lj[k]}\r\n`;
+        } else {
+          lj[k].forEach((l, i) => {
+            dataText += `lj_endereco-${i + 1}: {\r\n`;
+            Object.keys(l).forEach(kk => {
+              dataText += `${kk}:${l[kk]}\r\n`;
+            });
+            dataText += '}\r\n';
+          });
+        }
+      });
+      dataText += '}\r\n';
   });
   return dataText;
 };
@@ -195,4 +217,5 @@ module.exports = {
  formaPaymentForm,
  formatPaymentTerms,
  formatAllPaymentTerms,
+ formaAllStores,
 };

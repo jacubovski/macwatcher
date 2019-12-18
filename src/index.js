@@ -1,10 +1,13 @@
 const chokidar = require('chokidar');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { checkInternet } = require("./utils/checkConnectionInternet");
 const { login } = require('./axios/axios_auth');
 const changeActions = require('./actions/changeActions');
 const { handlerError } = require('./actions/handlerErrors');
+const integration = require('./integration/index');
+const OperationalSystem = os.platform();
 const folderSend = path.resolve(__dirname, `enviar`);
 const folderSended = path.resolve(__dirname, `enviados`);
 const folderError = path.resolve(__dirname, `errors`);
@@ -42,7 +45,11 @@ login().then(token => {
   watcher.on('add', async function(pth) {
     try {
       const p = path.normalize(pth);
-      await changeActions.addFiles(token,p);
+      if (p.includes('api')) {
+        await changeActions.addFiles(token, p);
+      } else if (p.includes('ecommerce')) {
+        await integration.uploadFile(p);
+      }
     } catch (error) {
       handlerError(error);   
     }

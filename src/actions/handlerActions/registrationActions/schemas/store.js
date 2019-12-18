@@ -63,9 +63,63 @@ const deleteStore = `
   )
 }`;
 
+const fetchStore = `
+query Store($code: Int!, $company: Int!) {
+  store(code: $code, company: $company) {
+    lj_codigo
+    lj_descricao
+    lj_icms_simples
+    lj_crt
+    lj_cnpj
+    lj_inscricao
+    lj_endereco(company: $company) {
+      end_origem
+      end_codigo_origem
+      end_tipo
+      end_endereco
+      end_numero
+      end_complemento
+      end_bairro
+      end_cep
+      end_uf
+      end_cod_municipio
+      end_municipio
+    }
+  }
+}
+`;
+
+const AllStores = `
+query Stores($company: Int!) {
+  stores(company: $company) {
+    lj_codigo
+    lj_descricao
+    lj_icms_simples
+    lj_crt
+    lj_cnpj
+    lj_inscricao
+    lj_endereco(company: $company) {
+      end_origem
+      end_codigo_origem
+      end_tipo
+      end_endereco
+      end_numero
+      end_complemento
+      end_bairro
+      end_cep
+      end_uf
+      end_cod_municipio
+      end_municipio
+    }
+  }
+}
+`;
+
 module.exports = {
   createStore,
   updateStore,
   deleteStore,
   bulkCreateStore,
+  fetchStore,
+  AllStores,
 };
