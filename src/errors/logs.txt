@@ -29,3 +29,4 @@
   "path": "/home/nobre/Documentos/Projects/macwatcher/src/allBrands.JSON",
   "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands-1576680705253.JSON"
 }
+{}
