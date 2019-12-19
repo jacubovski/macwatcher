@@ -30,3 +30,60 @@
   "dest": "/home/nobre/Documentos/Projects/macwatcher/src/enviados/allBrands-1576680705253.JSON"
 }
 {}
+{
+  "code": 425
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652104.xml"
+}
+{
+  "code": 425
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652296.xml"
+}
+{
+  "code": 425
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652295.xml"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652295.xml"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652296.xml"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652295.xml"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652296.xml"
+}
+{
+  "errno": -2,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce//home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652295.xml"
+}

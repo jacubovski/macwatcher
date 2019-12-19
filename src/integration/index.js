@@ -1,13 +1,15 @@
+require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
+const { appendLogs } = require('../actions/handlerErrors');
 const Client = require('ftp');
 
 const c = new Client();
 const connectionProperties = {
-  host: '177.53.143.13',
-  port: 21,
-  user: 'integracao',
-  password: '@j19801980***',
+  host: process.env.FTP_HOST,
+  port: process.env.FTP_PORT,
+  user: process.env.FTP_USER,
+  password: process.env.FTP_PASS,
 };
 const folderPath = path.resolve(__dirname, '..', 'enviar', 'ecommerce');
 module.exports = {
@@ -15,11 +17,16 @@ module.exports = {
   c.on('ready', async function () {
     fs.readdir(folderPath, 'utf-8', async (err, data) => {
       if (err) console.log(err);
-      data.forEach(fileName => {
-        c.put(`${folderPath}/${fileName}`, fileName, function (err) {
+      data.forEach((fileName) => {
+        const name = fileName.split('.');
+        c.put(`${folderPath}/${fileName}`, `integracao_erp/${name[0]}-${Date.now()}.${name[1]}`, function (err) {
           if (err) {
-            console.log(err);
+            appendLogs(err, 'UploadToFTP');
           } else {
+            const pathFile = `${folderPath}/${fileName}`;
+            fs.unlink(pathFile, (err) => {
+              if (err) appendLogs(err, 'Unlink after UploadFTP file');
+            });
             console.log(fileName + " was uploaded successfully!");
           }
           c.end();

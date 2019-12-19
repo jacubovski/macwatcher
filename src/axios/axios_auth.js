@@ -1,21 +1,22 @@
-const axios = require('axios')
-const CryptoJS = require('crypto-js')
+require('dotenv').config();
+const axios = require('axios');
+const CryptoJS = require('crypto-js');
 const axiosAuth = axios.create({
-  baseURL: 'http://127.0.0.1:3000',
+  baseURL: 'https://apimastersoft.com.br',
   // http://127.0.0.1:3000   https://www.apimastersoft.com.br
 
 });
 
 const login = () => {
   return new Promise((resolve, reject) => {
-    const encPass = CryptoJS.AES.encrypt(process.env.USER_PASSWORD,process.env.CRYPTO)
+    const encPass = CryptoJS.AES.encrypt(process.env.USER_PASSWORD, process.env.CRYPTO);
     const pass = encPass.toString(); 
     const query = `
     mutation createToken($email: String!, $password: String!) {
       createToken(email: $email password: $password){
           token
       }
-    }`
+    }`;
     axiosAuth.post('/macweb',{
       query,
       variables: { 
@@ -36,17 +37,18 @@ const login = () => {
       }, err => Promise.reject(err));
       resolve(token);
     }).catch(err => {
-      throw new Error(err)
-    })
-  })
-}
+      throw new Error(err);
+    });
+  });
+};
+
 axiosAuth.interceptors.response.use(response => response, (error) => {
   if (error.response.data.errors[0].message === 'Unauthorized! Token not provided!') {
-    console.log(error.response.data.errors)
+    console.log(error.response.data.errors);
   }
   return Promise.reject(error);
 });
 module.exports = {
   axiosAuth,
   login
-}
+};
