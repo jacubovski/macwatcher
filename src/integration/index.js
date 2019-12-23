@@ -19,7 +19,7 @@ module.exports = {
       if (err) console.log(err);
       data.forEach((fileName) => {
         const name = fileName.split('.');
-        c.put(`${folderPath}/${fileName}`, `integracao_erp/${name[0]}-${Date.now()}.${name[1]}`, function (err) {
+        c.put(`${folderPath}/${fileName}`, `${process.env.FTP_FOLDER_PATH}/${name[0]}-${Date.now()}.${name[1]}`, function (err) {
           if (err) {
             appendLogs(err, 'UploadToFTP');
           } else {
