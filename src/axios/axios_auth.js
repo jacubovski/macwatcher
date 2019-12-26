@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 const axios = require('axios');
 const CryptoJS = require('crypto-js');
 const axiosAuth = axios.create({

@@ -87,3 +87,39 @@
   "syscall": "unlink",
   "path": "/home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce//home/nobre/Documentos/Projects/macwatcher/src/enviar/ecommerce/cadastro_produtos-1576762652295.xml"
 }
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}
+{
+  "errno": -4058,
+  "code": "ENOENT",
+  "syscall": "unlink",
+  "path": "C:\\MSOFT\\API\\macwatcher\\src\\enviar\\ecommerce\\ERP_PRODUTOS.XML"
+}

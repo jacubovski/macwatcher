@@ -45,6 +45,7 @@ login().then(token => {
   watcher.on('add', async function(pth) {
     try {
       const p = path.normalize(pth);
+      console.log(p)
       if (p.includes('api')) {
         await changeActions.addFiles(token, p);
       } else if (p.includes('ecommerce')) {

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const path = require('path');
+const os = require('os');
 const fs = require('fs');
 const { appendLogs } = require('../actions/handlerErrors');
 const Client = require('ftp');
@@ -12,27 +13,38 @@ const connectionProperties = {
   password: process.env.FTP_PASS,
 };
 const folderPath = path.resolve(__dirname, '..', 'enviar', 'ecommerce');
+function removeFile(data) {
+  const pathFile = `${folderPath}/${data}`;
+  fs.unlink(pathFile, (err) => {
+    if (err) appendLogs(err, 'Unlink after UploadFTP file');
+  });
+}
+
 module.exports = {
  uploadFile(pth) {
   c.on('ready', async function () {
-    fs.readdir(folderPath, 'utf-8', async (err, data) => {
-      if (err) console.log(err);
-      data.forEach((fileName) => {
-        const name = fileName.split('.');
-        c.put(`${folderPath}/${fileName}`, `${process.env.FTP_FOLDER_PATH}/${name[0]}-${Date.now()}.${name[1]}`, function (err) {
-          if (err) {
-            appendLogs(err, 'UploadToFTP');
-          } else {
-            const pathFile = `${folderPath}/${fileName}`;
-            fs.unlink(pathFile, (err) => {
-              if (err) appendLogs(err, 'Unlink after UploadFTP file');
-            });
-            console.log(fileName + " was uploaded successfully!");
-          }
-          c.end();
-        });
+    setTimeout(() => {
+      fs.readdir(folderPath, 'utf-8', async (err, data) => {
+        if (err) console.log('error readdir',err);
+        for (let i =0; i < data.length; i++) {
+          console.log(data[i])
+          const name = data[i].split('.');
+          const opSis = os.platform();
+          const filePathAndName = opSis.match('win') ? `${folderPath}\\${data[i]}` : `${folderPath}/${data[i]}`;
+          c.put(filePathAndName, `${process.env.FTP_FOLDER_PATH}/${name[0]}-${Date.now()}.${name[1]}`, function (err) {
+            if (err) {
+              appendLogs(err, 'UploadToFTP');
+              removeFile(data[i])
+            } else {
+              removeFile(data[i])
+              console.log(data[i] + " was uploaded successfully!");
+            }
+            c.end();
+          });
+        }
       });
-    });
+    },10000)
+    
     // c.list(function (err, list) {
     //   if (err) throw err;
     //   list.forEach(function (element, index, array) {

@@ -1,4 +1,3 @@
-require('dotenv').config();
 const nodemailer = require('nodemailer');
 const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL;
 
